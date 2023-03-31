@@ -37,6 +37,28 @@ menRouter.post("/add",async(req,res)=>{
     }
 })
 
+menRouter.patch("/update/:noteId",async(req,res)=>{
+    const payload=  req.body
+    const productId = req.params.productId
+    try{
+        await MenModel.findByIdAndUpdate({_id:productId},payload)
+        res.status(200).send({"msg":"Product has been updated."})
+    } catch(err){
+        res.status(400).send({"msg":err.message})
+    }
+})
+
+menRouter.delete("/delete/:productId",async(req,res)=>{
+    const payload=  req.body
+    const productId = req.params.productId
+    try{
+        await MenModel.findByIdAndDelete({_id:productId},payload)
+        res.status(200).send({"msg":"Product has been updated."})
+    } catch(err){
+        res.status(400).send({"msg":err.message})
+    }
+})
+
 module.exports = {
     menRouter
 }
