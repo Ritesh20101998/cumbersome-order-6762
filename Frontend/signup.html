@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+</head>
+<body>
+    <centre>
+        <h2>Register as a Customer</h2>
+        <label>Name</label>
+        <input type="text" placeholder="Enter Your Name" id="name">
+        <br><br>
+        <label>Mobile</label>
+        <input type="number" placeholder="Enter Your Mobile No." id="mobile">
+        <br><br>
+        <label>Email</label>
+        <input type="email" placeholder="Enter Your Email" id="email">
+        <br><br>
+        <label>Password</label>
+        <input type="password" placeholder="Enter Your Password" id="pass">
+        <br><br>    
+        <input type="submit" placeholder="Register" onclick="register()">
+        <p>Already have an Account <a href="login.html">Click Here</a></p>
+    </centre>
+</body>
+<script>
+    const register=()=>{
+        const payload = {
+            name : document.getElementById("name").value,
+            mobile:document.getElementById("mobile").value,
+            email:document.getElementById("email").value,
+            password:document.getElementById("pass").value
+        }
+        console.log(payload)
+        fetch("http://localhost:9000/users/register",{
+            method : "POST",
+            headers : {
+                "Content-type":"application/json"
+            },
+            body:JSON.stringify(payload)
+        }).then(res=>res.json())
+        .then(res=>console.log(res))
+        .catch(err=>console.log(err))
+    }
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <div>
+        <label>Email</label>
+        <input type="email" placeholder="Enter Your Email" id="email">
+        <br><br>
+        <label>Password</label>
+        <input type="password" placeholder="Enter Your Password" id="pass">
+        <br><br>
+        <input type="submit" placeholder="Login" Onclick="login()">
+    </div>
+</body>
+<script>
+    const login=()=>{
+    const payload = {
+        email:document.getElementById("email").value,
+        password:document.getElementById("pass").value
+    }
+ 
+    // console.log(payload)
+    fetch("http://localhost:9000/users/login",{
+            method:"POST",
+            headers:{
+                "Content-type":"application/json"
+            },
+            body:JSON.stringify(payload)
+        }).then(res=>res.json())
+        .then(res=>{
+        console.log(res)
+        if (res.msg==="Login sucessfully"){
+            window.location.href="./index.html"
+             }else{
+                alert("wrong credentials")
+             }
+         localStorage.setItem("token",res.token) 
+    })   
+    }
+</script>
+</html>
