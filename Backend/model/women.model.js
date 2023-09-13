@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 //usr schema
-const menSchema=mongoose.Schema({
+const womenSchema=mongoose.Schema({
     image:{
         type: String, 
         required: true
@@ -31,8 +31,8 @@ const menSchema=mongoose.Schema({
     timestamps:true
 })
 
-const MenModel = mongoose.model("men",menSchema)
+const womenModel = mongoose.model("women",womenSchema)
 
 module.exports = {
-    MenModel
+    womenModel
 }

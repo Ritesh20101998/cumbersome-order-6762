@@ -1,13 +1,17 @@
 const express = require("express")
-const {connection}= require("./db")
-const {userRouter} = require("./routes/user.routes") 
-const {authenticate} = require("./middleware/authenticate.middleware")
-const {menRouter} = require("./routes/men.routes") 
 const cors = require("cors")
-require("dotenv").config()
 const app = express()
 app.use(express.json())
 app.use(cors())
+require("dotenv").config()
+
+// routes
+const {connection}= require("./config/db")
+const {authenticate} = require("./middleware/authenticate.middleware")
+const {userRouter} = require("./routes/user.routes") 
+const {menRouter} = require("./routes/men.routes") 
+
+
 app.use("/users",userRouter)
 app.use(authenticate)
 app.use("/men",menRouter)
@@ -24,6 +28,6 @@ app.listen(process.env.port,async()=>{
         console.log(err.message)
         console.log("Not connected to MongoDB Atlas")
     }
-    console.log(`server is running at port ${process.env.port}`)
+    console.log(`Server is running at port ${process.env.port}`)
 })
 
