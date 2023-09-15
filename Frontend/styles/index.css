@@ -571,6 +571,7 @@ nav ul li:hover .subMenu{
     text-transform: capitalize;
 }
 
+/* footer starts here */
 footer{
     background-color: rgb(241, 245, 241);
     color: black;
@@ -666,4 +667,4 @@ footer{
     font-size: 16px;
     border: none;
     cursor: pointer;
-  }
+}

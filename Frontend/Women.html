@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="./styles/login.css">
-    <script src="./login.css"></script>
+    <title>Women Page</title>
+    <link rel="stylesheet" href="./styles/women.css">
     <!--fevicon icon-->
     <link rel="icon" href="./img/Mytra.png" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -18,7 +16,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <!-- header starts here -->
@@ -345,46 +342,53 @@
     </nav>
 <!-- header ends here  -->
 
-    <div id="login">
-        <img src="./img/login1.png" alt="">
-        <form action="">
-            <h1>Login As a Customer</h1>
-            <label>Email</label>
-            <input type="email" placeholder="Enter Your Email" id="email">
-            <br><br>
-            <label>Password</label>
-            <input type="password" placeholder="Enter Your Password" id="pass">
-            <br><br>
-            <input type="submit" placeholder="Login" Onclick="login()">
-            <p>Don't have an Account <a href="signup.html">Click Here</a></p>
-        </form>
-        
+
+<!-- footer starts here -->
+<footer>
+    <div class="footer-box1">
+        <div class="footer-box11">
+            <div>
+                <h1>Shop Non-stop on Mytra</h1>
+                <p>Trusted by more than 1 Crore Indians</p>
+                <p>Cash on Delivery | Free Delivery</p>
+            </div>
+            <div class=" becomerSeller_appDownload_container">
+                <a href="#" class="becomerSeller_appDownload">
+                    <img src="https://images.meesho.com/images/pow/playstoreIcon.webp" />
+                </a>
+                <a href="#" class="becomerSeller_appDownload">
+                    <img src="https://images.meesho.com/images/pow/appstoreIcon.webp" />
+                </a>
+            </div>
+        </div>
+        <div class="footer-box12">
+            <h3>Careers</h3>
+            <h3>Become a Supplier</h3>
+            <h3>Hall of Fame</h3>
+        </div>
+        <div class="footer-box13">
+            <h3>Legal And Policies</h3>
+            <h3>Mytra Tech Blog</h3>
+            <h3>Noticies And Returns</h3>
+        </div>
+        <div class="footer-box14">
+            <h3><b>Reach out to us</b></h3>
+
+            <a href="facebook.com"><img src="./img/facebook.png" alt=""></a>
+            <a href="instagram.com"><img src="./img/intagream.png" alt=""></a>
+            <a href="youtube.com"><img src="./img/youtube.png" alt=""></a>
+            <a href=""><img src="./img/linkedin.png" alt=""></a>
+            <a href=""><img src="./img/twitter.png" alt=""></a>
+        </div>
+        <div class="footer-box15">
+            <h3>Contact Us</h3>
+            <p>Fashnear Technologies Private Limited,</p>
+                <p>CIN: U74900KA2015PTC082263
+                06-105-B, 06-102, (138 Wu) Vaishnavi Signature, No. 78/9, Outer Ring Road, Bellandur, Varthur Hobli, Bengaluru-560103, Karnataka, India
+                E-mail address: query@Mytra.com
+                © 2015-2022 Mytra.com</p>
+        </div>  
     </div>
+    <!-- footer ends here  -->
 </body>
-<script>
-    const login=()=>{
-    const payload = {
-        email:document.getElementById("email").value,
-        password:document.getElementById("pass").value
-    }
- 
-    // console.log(payload)
-    fetch("http://localhost:9000/users/login",{
-            method:"POST",
-            headers:{
-                "Content-type":"application/json"
-            },
-            body:JSON.stringify(payload)
-        }).then(res=>res.json())
-        .then(res=>{
-        console.log(res)
-        if (res.msg==="Login sucessfully"){
-            window.location.href="./index.html"
-             }else{
-                alert("wrong credentials")
-             }
-         localStorage.setItem("token",res.token) 
-    })   
-    }
-</script>
 </html>
