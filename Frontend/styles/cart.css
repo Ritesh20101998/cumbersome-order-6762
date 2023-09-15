@@ -6,7 +6,7 @@
     --textColor : rgb(87, 85, 85);
 }
 
-
+/* header starts here */
 body{
     margin: 0;
     padding: 0;
@@ -271,24 +271,81 @@ nav ul li:hover .subMenu{
 .column{
     margin-right: 40px;
 }
+/* header ends here */
 
-/* registration starts here */
-#login{
-    width: 60%;
-    margin: auto;
-    margin-top: 30px;
-    text-align: center;
-    border: 1px solid black;
+/* footer starts here */
+footer{
+    background-color: rgb(241, 245, 241);
+    color: black;
+}
+
+.footer-box1{
+    /* border:1px solid black; */
+    height:auto;
+
+    width:90%;
     display: flex;
+    padding: 10px 30px;
+    margin: auto;
+    /* margin-top: 30px; */
 }
-#login img{
-    width: 50%;;
+
+.footer-box11{
+    /* border:1px solid black; */
+    margin: 20px 0px;
+    /* text-align: center; */
+    width: 30%;
+    padding: 20px 10px;
 }
-#login form {
-    padding: 20px;
-    border-left: 1px solid black;
+
+
+.footer-box12{
+    /* border:1px solid black; */
+    margin: 20px 0px;
+    /* text-align: center; */
+    width: 15%;
+    font-size: 17px;
+    padding: 20px 10px;
+    
 }
-#login > h1{
-    font-size: 30px;
-    /* color: red; */
+
+.footer-box13{
+    /* border:1px solid black; */
+    margin: 20px 0px;
+    /* text-align: center; */
+    width: 17%;
+    font-size: 17px;
+    padding: 20px 10px;
 }
+.footer-box12 , .footer-box13 >h3{
+    cursor: pointer;
+}
+.footer-box14{
+    /* border: 1px solid black; */
+    margin: 20px 0px;
+    /* text-align: center; */
+    width: 20%;
+    font-size: 17px;
+    padding: 20px 20px;
+}
+.footer > a{
+    display: flex;
+    
+    padding: 0px 15px;
+}
+.footer-box14 img{
+    width:16%;
+    margin: 0px 2px;
+    cursor: pointer;
+    /* border:1px solid black; */
+}
+
+.footer-box15{
+    /* border: 1px solid black; */
+    margin: 20px 0px;
+    /* text-align: center; */
+    width: 20%;
+    font-size: 15px;
+    padding: 20px 20px;
+}
+/* footer ends Here */
